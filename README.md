@@ -1,2 +1,2 @@
-# EasyHire
-EasyHire - Smooth hiring process tool
+# EasyHiRe
+EasyHiRe - Smooth hiring process tool
