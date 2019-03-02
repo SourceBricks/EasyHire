@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Tester\Exception\PendingException;
@@ -7,9 +8,6 @@ use Behat\Gherkin\Node\TableNode;
 use SB\EasyHire\Funnel;
 use SB\EasyHire\FunnelInterface;
 
-/**
- * Defines application features from the specific context.
- */
 class FeatureContext implements Context
 {
     /**
