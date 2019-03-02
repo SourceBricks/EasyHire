@@ -4,7 +4,8 @@
     "description": "HR pipeline",
     "license": "MIT",
     "require": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "beberlei/assert": "^3.2"
     },
     "require-dev": {
         "behat/behat": "^3.5",
