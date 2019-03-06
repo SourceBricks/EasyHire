@@ -1,13 +1,12 @@
-Feature: Lead Funnel create lead - Possible candidate initiates contact
+Feature: Lead creation - app should be able to create Lead
   In order to apply for position
   As a possible candidate
   I need to be able to submit some data
 
   Rules:
-  - Lead mail is valid
   - Firstname is filled
   - Lastname is filled
 
   Scenario:
-    When lead tries to submit data with firstname "first name", lastname "last name", and valid email "mail@mail.com" should not get validation error
+    When app tries to create lead with firstname "first name", lastname "last name" we should not get validation error
 
