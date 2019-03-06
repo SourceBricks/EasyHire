@@ -5,13 +5,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
-        "beberlei/assert": "^3.2"
+        "beberlei/assert": "^3.2",
+        "ramsey/uuid": "^3.8"
     },
     "require-dev": {
         "behat/behat": "^3.5",
         "phpspec/phpspec": "^5.1",
         "phpstan/phpstan": "^0.11.2",
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "^7.5",
+        "roave/security-advisories": "dev-master"
     },
     "config": {
         "preferred-install": "dist",

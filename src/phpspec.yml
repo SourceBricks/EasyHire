@@ -1,1 +1,6 @@
-
+suites:
+    default:
+        namespace: SB\EasyHire
+        psr4_prefix: SB\EasyHire
+        src_path: app
+formatter.name: pretty
