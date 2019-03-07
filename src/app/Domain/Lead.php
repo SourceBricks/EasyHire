@@ -12,15 +12,6 @@ class Lead
 
     private $lastName;
 
-    public static function createForWriting($argument1, $argument2, $argument3)
-    {
-        $lead = new Lead();
-
-        // TODO: write logic here
-
-        return $lead;
-    }
-
     public static function create(string $identifier, string $firstName,string $lastName): Lead
     {
         Assertion::uuid($identifier, 'Invalid identifier', 'sb.easyhire.domain.lead.identifier');
