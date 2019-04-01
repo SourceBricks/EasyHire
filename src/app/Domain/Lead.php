@@ -1,32 +1,43 @@
 <?php
+declare(strict_types=1);
 
 namespace SB\EasyHire\Domain;
 
 use Assert\Assertion;
 use function sprintf;
 
-class Lead
+final class Lead
 {
+    /** @var string */
     private $identifier;
-
+    /** @var FirstName */
     private $firstName;
-
+    /** @var LastName */
     private $lastName;
+    /** @var Email */
+    private $email;
+    /** @var PhoneNumber */
+    private $phoneNumber;
+    /** @var Referral */
+    private $referral;
 
-    public static function create(string $identifier, string $firstName,string $lastName): Lead
-    {
+    public static function appliesByHimself(
+        string $identifier,
+        FirstName $firstName,
+        LastName $lastName,
+        Email $email,
+        PhoneNumber $phoneNumber
+    ): Lead {
         Assertion::uuid($identifier, 'Invalid identifier', 'sb.easyhire.domain.lead.identifier');
-        // todo check how to chain assertions
-        Assertion::string($firstName, 'Invalid Firstname', 'sb.easyhire.domain.lead.firstname');
-        Assertion::notEmpty($firstName, 'Invalid Firstname', 'sb.easyhire.domain.lead.firstname');
-        Assertion::string($lastName, 'Invalid Lastname', 'sb.easyhire.domain.lead.lastname');
-        Assertion::notEmpty($lastName, 'Invalid Lastname', 'sb.easyhire.domain.lead.lastname');
 
         $self = new self();
 
-        $self->identifier = $identifier;
-        $self->firstName = $firstName;
-        $self->lastName = $lastName;
+        $self->identifier  = $identifier;
+        $self->firstName   = $firstName;
+        $self->lastName    = $lastName;
+        $self->email       = $email;
+        $self->phoneNumber = $phoneNumber;
+        $self->referral    = new AppliedByHimself();
 
         return $self;
     }
@@ -39,5 +50,10 @@ class Lead
     public function fullName(): string
     {
         return sprintf('%s %s', $this->firstName, $this->lastName);
+    }
+
+    public function referral(): Referral
+    {
+        return $this->referral;
     }
 }

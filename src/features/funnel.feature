@@ -6,7 +6,10 @@ Feature: Lead creation - app should be able to create Lead
   Rules:
   - Firstname is filled
   - Lastname is filled
+  - Phone number is filled and valid
+  - Email is filled and valid
 
   Scenario:
-    When app tries to create lead with firstname "first name", lastname "last name" we should not get validation error
+    When user submits firstname "first name", lastname "last name", email "test@test.com", phone number "+490160123123123"
+    Then Lead should be created with referral "applied-by-himself"
 
