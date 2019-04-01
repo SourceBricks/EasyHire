@@ -47,24 +47,4 @@ class Hire implements Pipeline
 
         return $hire;
     }
-
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
-    public function getDescription(): string
-    {
-        return $this->description;
-    }
-
-    public function getSteps(): array
-    {
-        return $this->steps;
-    }
-
-    public function getIdentifier(): string
-    {
-        return $this->identifier;
-    }
 }

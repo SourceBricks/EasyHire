@@ -3,6 +3,7 @@
 namespace SB\EasyHire\Domain;
 
 use Assert\Assertion;
+use function sprintf;
 
 class Lead
 {
@@ -35,13 +36,8 @@ class Lead
         return $this->identifier;
     }
 
-    public function getFirstName(): string
+    public function fullName(): string
     {
-        return $this->firstName;
-    }
-
-    public function getLastName(): string
-    {
-        return $this->lastName;
+        return sprintf('%s %s', $this->firstName, $this->lastName);
     }
 }
