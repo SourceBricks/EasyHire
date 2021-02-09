@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  easy_hire:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./app:/app
+
+  database:
+    image: postgres:11-alpine
+    environment:
+        POSTGRES_USER: main
+        POSTGRES_PASSWORD: main
+        POSTGRES_DB: main
+    ports: [5432]
