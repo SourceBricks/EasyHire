@@ -16,4 +16,5 @@ services:
         POSTGRES_USER: main
         POSTGRES_PASSWORD: main
         POSTGRES_DB: main
-    ports: [5432]
+    ports:
+      - 5432:5432
